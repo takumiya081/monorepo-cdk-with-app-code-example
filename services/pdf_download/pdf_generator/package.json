@@ -1,0 +1,19 @@
+{
+  "name": "@service-pdf-download/pdf-generator",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "dev": "tsc  -w && tsc-alias -w",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@packages/logger": "*"
+  },
+  "devDependencies": {
+    "@packages/config": "*",
+    "@packages/tsconfig": "*"
+  }
+}

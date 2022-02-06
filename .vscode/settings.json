@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "javascript.validate.enable": false,
+  "javascript.format.enable": true,
+  "eslint.format.enable": true,
+  "eslint.packageManager": "yarn",
+  "eslint.workingDirectories": [
+    {
+      "pattern": "./packages/*/"
+    },
+    {
+      "pattern": "./services/*/*/"
+    }
+  ],
+  // 修正した箇所だけvs codeのフォーマットをきかせる
+  // フォーマットしない箇所があるので一旦無効
+  // "editor.formatOnSaveMode": "modifications",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib"
+}
