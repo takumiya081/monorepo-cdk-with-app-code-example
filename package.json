@@ -4,7 +4,8 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "services/*/*"
+    "services/*/*",
+    "infra"
   ],
   "scripts": {
     "build": "turbo run build",

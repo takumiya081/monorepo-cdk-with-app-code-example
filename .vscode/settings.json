@@ -11,6 +11,9 @@
     },
     {
       "pattern": "./services/*/*/"
+    },
+    {
+      "pattern": "./infra"
     }
   ],
   // 修正した箇所だけvs codeのフォーマットをきかせる
