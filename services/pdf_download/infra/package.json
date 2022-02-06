@@ -1,0 +1,21 @@
+{
+  "name": "@service-pdf-download/infra",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@packages/config": "*",
+    "@packages/tsconfig": "*",
+    "aws-cdk": "^2.10.0",
+    "ts-node": "^10.4.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.10.0",
+    "constructs": "^10.0.53"
+  }
+}
