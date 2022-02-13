@@ -1,0 +1,17 @@
+{
+  "name": "@service-hello/hello-lambda-on-docker",
+  "version": "0.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@packages/config": "*",
+    "@packages/tsconfig": "*",
+    "@types/aws-lambda": "^8.10.92",
+    "aws-lambda": "^1.0.7"
+  }
+}
