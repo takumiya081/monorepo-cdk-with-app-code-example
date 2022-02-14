@@ -21,7 +21,7 @@ COPY ./package.json ./yarn.lock ./turbo.json ./
 COPY ./${SERVICE_DIR}/package.json ./${SERVICE_DIR}/
 COPY ./packages/ ./packages/
 
-RUN yarn install && yarn add -W aws-lambda-ric
+RUN yarn install --frozen-lockfile --no-cache && yarn add -W aws-lambda-ric
 
 COPY ./${SERVICE_DIR}/ ./${SERVICE_DIR}/
 
@@ -36,23 +36,19 @@ ARG SERVICE_DIR
 # AWS Lambda runtime dependencies
 RUN apt-get update && \
     apt-get install -y \
-        g++ \
-        make \
-        unzip \
-        libcurl4-openssl-dev \
-        autoconf \
-        libtool \
-        cmake
+         cmake
 
 WORKDIR ${APP_DIR}
 
 COPY --from=build-image ${APP_DIR} ${APP_DIR}
 
-COPY ./${SERVICE_DIR}/aws-lambda-rie /usr/local/bin/aws-lambda-rie
 COPY ./${SERVICE_DIR}/entrypoint.sh /usr/local/bin/entrypoint.sh
+COPY ./${SERVICE_DIR}/aws-lambda-rie /usr/local/bin/aws-lambda-rie
 
-RUN chmod u+x /usr/local/bin/entrypoint.sh /usr/local/bin/aws-lambda-rie
+RUN chmod 777 /usr/local/bin/entrypoint.sh /usr/local/bin/aws-lambda-rie && \
+    chmod 777 $(find . -type f) && \
+    chmod 777 $(find . -type d)
+
 ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
-WORKDIR ${APP_DIR}/${SERVICE_DIR}/dist
 ENV HOME="/tmp"
-CMD [ "app.handler" ]
+CMD [ "/usr/app/services/hello/hello_lambda_on_docker/dist/app.handler" ]

@@ -1,0 +1,12 @@
+{
+  "extends": "@packages/tsconfig/base.json",
+  "compilerOptions": {
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "target": "es2020",
+    "lib": ["es2020"]
+  },
+  "include": ["."],
+  "exclude": ["dist", "build", "cdk.out", "node_modules"]
+}

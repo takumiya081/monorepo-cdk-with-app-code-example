@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  hello:
+    build:
+      context: .
+      dockerfile: ./services/hello/hello_lambda_on_docker/Dockerfile
+    # volumes:
+    # - ./packeages/pdf/dist:/usr/app/dist
+    ports:
+      - 9000:8080

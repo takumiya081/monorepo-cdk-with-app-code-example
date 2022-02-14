@@ -1,5 +1,5 @@
 {
-  "name": "@service-pdf-download/infra",
+  "name": "@service-hello/infra",
   "version": "0.0.0",
   "main": "./dist/index.js",
   "types": "./src/index.ts",
@@ -13,9 +13,11 @@
   "devDependencies": {
     "@packages/config": "*",
     "@packages/tsconfig": "*",
+    "@types/app-root-path": "^1.2.4",
     "aws-cdk": "^2.12.0"
   },
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "aws-cdk-lib": "^2.12.0",
     "constructs": "^10.0.61"
   }
