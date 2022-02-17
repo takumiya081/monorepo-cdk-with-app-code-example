@@ -13,7 +13,7 @@
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen",
       "disableOptimisticBPs": true,
-      "program": "${workspaceFolder}/tools/vscodeJestTests.js"
+      "program": "${workspaceFolder}/tools/vscode_jest_tests.js"
     },
     {
       "type": "node",

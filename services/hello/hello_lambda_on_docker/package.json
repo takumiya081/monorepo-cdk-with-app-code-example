@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "build": "tsc && tsc-alias",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test": "jest"
   },
   "devDependencies": {
     "@packages/config": "*",
